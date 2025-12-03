@@ -1,0 +1,1 @@
+execute as @e[type=armor_stand,tag=cnv1_anchor_albert] at @s unless entity @e[type=villager,tag=cnv1_albert,distance=..1] run summon villager ~ ~ ~ {CustomName:'{"text":"Альберт","color":"gold"}',CustomNameVisible:1b,NoAI:1b,PersistenceRequired:1b,VillagerData:{type:"plains",profession:"librarian",level:2},Tags:["cnv1_albert"],Rotation:[180f,0f]}
