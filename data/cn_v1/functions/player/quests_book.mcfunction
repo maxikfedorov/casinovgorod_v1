@@ -1,9 +1,5 @@
-# убираем старую версию журнала, если была
 clear @s minecraft:written_book{title:"Квесты Casinovgorod"} 16
-
-# даём квестам шанс записать свои страницы
-function cn_v1:quests/albert/book_page
-# тут позже:
-# function cn_v1:quests/<другой_квест>/book_page
-
+execute as @s if score @s q_albert_main matches 0 run give @s minecraft:written_book{title:"Квесты Casinovgorod",author:"Система",pages:['{"text":"Квесты Casinovgorod\\n\\n1) Альберт — не активен\\n2) Альберт — квест 2 (заглушка)\\n3) Емеля — не активен","color":"white","extra":[{"text":"\\n","color":"white"}]}','{"text":"Альберт — квест 1\\n\\nСтатус: не активен\\nЗадача: квест ещё не взят. Найди Альберта в казино.","color":"gray"}','{"text":"Альберт — квест 2\\n\\nСтатус: не активен\\nЗадача: ещё не доступна.","color":"gray"}','{"text":"Емеля\\n\\nСтатус: не активен\\nПока не даёт квесты. Может быть, позже.","color":"gray"}']}
+execute as @s if score @s q_albert_main matches 1 run give @s minecraft:written_book{title:"Квесты Casinovgorod",author:"Система",pages:['{"text":"Квесты Casinovgorod\\n\\n1) Альберт — активен\\n2) Альберт — квест 2 (заглушка)\\n3) Емеля — не активен","color":"white"}','{"text":"Альберт — квест 1\\n\\nСтатус: активен\\nЗадача: принести 5 изумрудов и 3 алмаза.","color":"black"}','{"text":"Альберт — квест 2\\n\\nСтатус: не активен\\nЗадача: ещё не доступна.","color":"gray"}','{"text":"Емеля\\n\\nСтатус: не активен\\nПока не даёт квесты. Может быть, позже.","color":"gray"}']}
+execute as @s if score @s q_albert_main matches 2 run give @s minecraft:written_book{title:"Квесты Casinovgorod",author:"Система",pages:['{"text":"Квесты Casinovgorod\\n\\n1) Альберт — выполнен\\n2) Альберт — квест 2 (заглушка)\\n3) Емеля — не активен","color":"white"}','{"text":"Альберт — квест 1\\n\\nСтатус: выполнен\\nТы помог Альберту с первой задачей.","color":"dark_green"}','{"text":"Альберт — квест 2\\n\\nСтатус: не активен\\nЗадача: ещё не доступна.","color":"gray"}','{"text":"Емеля\\n\\nСтатус: не активен\\nПока не даёт квесты. Может быть, позже.","color":"gray"}']}
 tellraw @s {"text":"[Система] Журнал квестов обновлён.","color":"yellow"}
