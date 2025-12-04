@@ -1,1 +1,2 @@
-execute as @e[type=armor_stand,tag=cnv1_anchor_emelya] at @s unless entity @e[type=villager,tag=cnv1_emelya,distance=..1] run summon villager ~ ~ ~ {CustomName:'{"text":"Емеля","color":"gold"}',CustomNameVisible:1b,NoAI:1b,PersistenceRequired:1b,VillagerData:{type:plains,profession:librarian,level:1},Tags:["cnv1_emelya"], Rotation:[180f,0f]}
+# Проверяем якорь и отсутствие жителя
+execute as @e[type=armor_stand,tag=cnv1_anchor_emelya] at @s unless entity @e[type=villager,tag=cnv1_emelya,distance=..1] run function cn_v1:npc/emelya/spawn_composite
