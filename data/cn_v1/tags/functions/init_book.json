@@ -1,0 +1,7 @@
+{
+  "values": [
+    "cn_v1:system/book/init_core",
+    "cn_v1:quests/albert/book_init",
+    "cn_v1:npc/emelya/book_init"
+  ]
+}
