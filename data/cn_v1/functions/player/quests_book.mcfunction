@@ -17,6 +17,11 @@ execute if score @s q_albert_main matches 2.. run data modify block 0 250 0 Item
 # ЕМЕЛЯ
 data modify block 0 250 0 Items[0].tag.pages append from storage cn_v1:book_templates pages.emelya.s0
 
+# ДОН МОТЫГА
+execute if score @s q_don_hoe matches 1 run data modify block 0 250 0 Items[0].tag.pages append from storage cn_v1:book_templates pages.don_hoe.s1
+execute if score @s q_don_hoe matches 2 run data modify block 0 250 0 Items[0].tag.pages append from storage cn_v1:book_templates pages.don_hoe.s2
+
+
 # 4. ВЫДАЧА (Исправленная логика)
 # Удаляем старую книгу у игрока
 clear @s minecraft:written_book{title:"Квесты Casinovgorod"}

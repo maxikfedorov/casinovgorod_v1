@@ -10,5 +10,8 @@ execute as @p if score @s q_albert_main matches 1 run scoreboard players set @s 
 execute as @p run function cn_v1:player/quests_book_update
 
 
-# Заглушка второго квеста (если хочешь показать игроку, что дальше что-то будет)
-execute as @p if score @s q_albert_main matches 2 run function cn_v1:quests/albert2/start
+# СТАРТ КВЕСТА НА БОССА
+# Выдаем только если еще не выдан (0)
+execute as @p if score @s q_don_hoe matches 0 run scoreboard players set @s q_don_hoe 1
+execute as @p if score @s q_don_hoe matches 1 run tellraw @s {"text":"[Квест] Новое задание: Победить Дона Мотыгу!","color":"red","bold":true}
+execute as @p if score @s q_don_hoe matches 1 run function cn_v1:player/quests_book_update
